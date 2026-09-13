@@ -1,0 +1,90 @@
+import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import type { InCardType } from '../../Type/InCardsType';
+import { toast } from 'react-toastify';
+
+interface CardsType {
+  card : InCardType;
+  coin : number;
+  setCoin : Dispatch<SetStateAction<number>>
+  selectedSideCard: InCardType[];
+        setselectedSideCard :Dispatch<SetStateAction<InCardType[]>>
+}
+
+const Cards = ({card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
+
+  const [isSelected , setisSelected] = useState(false);
+
+  const handelarSelectedBTN = ()=>{
+    const newCoins = coin + 1 ;
+    
+
+    if (newCoins > 0) {
+       setCoin(newCoins)
+       toast(`${card.category} added susscesfully`)
+    }
+
+   setisSelected(true);
+setselectedSideCard([...selectedSideCard,card])
+
+  }
+
+    return (
+       <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm hover:shadow-md transition-shadow">
+
+      {/* Top: Icon + Badge */}
+      <div className="flex items-center justify-between">
+        
+        <img
+          src={card.icon}
+          alt={card.name}
+          className="h-7 w-7 object-contain"
+        />
+
+        <span className="rounded-full bg-pink-50 px-2 py-1 text-[8px] font-medium text-pink-500">
+          {card.badge}
+        </span>
+
+      </div>
+
+      {/* Name */}
+      <h2 className="mt-3 text-sm font-bold text-gray-900">
+        {card.name}
+      </h2>
+
+      {/* Description */}
+      <p className="mt-1 h-8 overflow-hidden text-[8px] leading-3 text-gray-500">
+        {card.description}
+      </p>
+
+      {/* Category + Difficulty + Rating */}
+      <div className="mt-3 flex items-center justify-between text-[7px]">
+
+        <span className="rounded bg-gray-100 px-2 py-1 text-gray-500">
+          {card.category}
+        </span>
+
+        <span className="text-gray-500">
+          {card.difficulty}
+        </span>
+
+        <span className="flex items-center gap-1 text-gray-700">
+          <span className="text-yellow-400">★</span>
+          {card.rating}
+        </span>
+
+      </div>
+
+      {/* Button */}
+      <button onClick={handelarSelectedBTN}
+        className={`mt-3 w-full rounded-md bg-gray-950 py-2 text-[8px] 
+        font-medium text-white transition
+         hover:bg-gray-800`} disabled={isSelected===true? true : false}
+      >
+        {isSelected === true ? 'selected' : 'Add to Stack'}
+      </button>
+
+    </div>
+    );
+};
+
+export default Cards;
