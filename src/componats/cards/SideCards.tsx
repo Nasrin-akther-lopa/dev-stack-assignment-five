@@ -1,5 +1,6 @@
 import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { InCardType } from '../../Type/InCardsType';
+import { toast } from 'react-toastify';
 
 interface SideCardsType {
     coin: number;
@@ -18,6 +19,13 @@ const SideCards = ({ coin, setCoin , selectedSideCard, setselectedSideCard }: Si
         const updetCoins = coin - 1;
         setCoin(updetCoins);
 
+        toast("All technologies removed successfully!");
+
+    }
+
+    const handelRemoveAllBtn =()=>{
+       setselectedSideCard([]);
+       toast("All technologies removed successfully!");
     }
 
     if (selectedSideCard.length === 0) {
@@ -73,7 +81,7 @@ const SideCards = ({ coin, setCoin , selectedSideCard, setselectedSideCard }: Si
                     })
                 }
 
-                <button className="mt-12 w-full rounded-lg border border-red-300 py-2 text-sm font-semibold text-red-500 hover:bg-red-50">
+                <button onClick={handelRemoveAllBtn} className="mt-12 w-full rounded-lg border border-red-300 py-2 text-sm font-semibold text-red-500 hover:bg-red-50">
                     Remove All
                 </button>
             </div>
