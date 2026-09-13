@@ -83,8 +83,8 @@ transition: Bounce,
     return (
         <div>
             <div className="w-[310px] rounded-2xl border border-slate-100 bg-white p-5 shadow-sm">
-                <h2 className="text-xl font-semibold text-slate-900">Your Stack</h2>
-                <p className="mt-1 text-sm text-slate-400"> {coin} Technology Selected</p>
+                <h2 className="text-2xl font-bold text-slate-900">Your Stack</h2>
+                <p className="mt-1 text-lg my-5 text-slate-400"> {coin} Technology Selected</p>
 
                 {
                     selectedSideCard.map((SideCard)  => {
@@ -102,14 +102,16 @@ transition: Bounce,
 
                                 <button
                                  onClick={() => handelRemoveBTN(SideCard)} 
-                                 className="text-2xl text-gray-400 cursor-pointer">×</button>
+                                 className="text-3xl text-gray-400 cursor-pointer">×</button>
                             </div>
 
                         </div>
                     })
                 }
 
-                <button onClick={handelRemoveAllBtn} className="mt-12 w-full rounded-lg border border-red-300 py-2 text-sm font-semibold text-red-500 hover:bg-red-50">
+                <button onClick={handelRemoveAllBtn} className="mt-12 cursor-pointer
+                 hover:bg-red-500 hover:text-white w-full rounded-lg border
+                  border-red-300 py-2 text-sm font-semibold text-red-500 ">
                     Remove All
                 </button>
             </div>

@@ -13,11 +13,11 @@ const Navbar = () => {
       <ul
         tabIndex={-1}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Home</a></li>
-        <li><a>Technologies</a></li>
-        <li><a>Projects</a></li>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
+        <li ><a className='text-red-500 text-lg font-bold'>Home</a></li>
+        <li><a className=' text-lg font-bold'>Technologies</a></li>
+        <li><a className=' text-lg font-bold'>Projects</a></li>
+        <li><a className=' text-lg font-bold'>About</a></li>
+        <li><a className=' text-lg font-bold'>Contact</a></li>
       </ul>
     </div>
     <div>
@@ -26,16 +26,16 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-     <li><a>Home</a></li>
-        <li><a>Technologies</a></li>
-        <li><a>Projects</a></li>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
+     <li><a className='text-red-500 text-lg font-bold'>Home</a></li>
+        <li><a className=' text-lg font-bold'>Technologies</a></li>
+        <li><a className=' text-lg font-bold'>Projects</a></li>
+        <li><a className=' text-lg font-bold'>About</a></li>
+        <li><a className=' text-lg font-bold'>Contact</a></li>
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
-    <button className="btn btn-secondary">Secondary</button>
+    <a className="mr-2 font-semibold ">Sign In</a>
+    <button className="btn bg-[#D91B7E] text-white font-semibold rounded-full">Sign Up</button>
   </div>
 </div>
         </div>

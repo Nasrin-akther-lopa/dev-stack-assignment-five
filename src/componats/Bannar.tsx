@@ -12,15 +12,25 @@ const Bannar = () => {
       className="max-w-sm rounded-lg "
     />
     <div>
-      <h1 className="text-5xl font-bold">Build Your Ideal
-Development Stack</h1>
-      <p className="py-6">
-       Explore frontend, backend, database, and tooling options,
-compare them side by side, and put together the stack that fits your
+      <h1 className="text-7xl font-bold">Build Your Ideal <br></br>
+      <span 
+      className="text-7xl font-bold 
+      bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 bg-clip-text
+       text-transparent ">
+        Development Stack
+        </span>
+</h1>
+      <p className="py-6 font-semibold text-gray-500">
+       Explore frontend, backend, database, and tooling options, <br />
+compare them side by side, and put together the stack that fits your <br />
 next project.
       </p>
-      <button className="btn btn-secondary">Explore Technologies</button>
-      <button className="btn">Learn More</button>
+      <div className='flex gap-5'>
+        <button className="btn
+       bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 text-white
+        px-5 py-2 rounded-lg">Explore Technologies</button>
+      <button className="btn px-5 font-semibold">Learn More</button>
+      </div>
     </div>
   </div>
 </div>

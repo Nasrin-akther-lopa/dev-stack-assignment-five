@@ -45,7 +45,9 @@ transition: Bounce,
   }
 
     return (
-       <div className="rounded-xl border border-gray-200 bg-white p-3 shadow-sm hover:shadow-md transition-shadow">
+       <div className="rounded-xl border
+        border-gray-200 bg-white p-3 shadow-sm  transition-all 
+        duration-300 ease-out hover:-translate-y-2 hover:scale-105 hover:shadow-2xl">
 
       {/* Top: Icon + Badge */}
       <div className="flex items-center justify-between">
@@ -63,27 +65,27 @@ transition: Bounce,
       </div>
 
       {/* Name */}
-      <h2 className="mt-3 text-sm font-bold text-gray-900">
+      <h2 className="mt-3 text-lg font-bold text-gray-800">
         {card.name}
       </h2>
 
       {/* Description */}
-      <p className="mt-1 h-8 overflow-hidden text-[8px] leading-3 text-gray-500">
+      <p className="mt-1 h-8 overflow-hidden text-[12px] font-semibold leading-3 text-gray-400">
         {card.description}
       </p>
 
       {/* Category + Difficulty + Rating */}
-      <div className="mt-3 flex items-center justify-between text-[7px]">
+      <div className="mt-3 flex items-center justify-between text-[10px]">
 
-        <span className="rounded bg-gray-100 px-2 py-1 text-gray-500">
+        <span className="rounded bg-gray-100 px-2 py-1 font-bold text-[12px] text-gray-500">
           {card.category}
         </span>
 
-        <span className="text-gray-500">
+        <span className="text-gray-500 font-bold text-[12px]">
           {card.difficulty}
         </span>
 
-        <span className="flex items-center gap-1 text-gray-700">
+        <span className="flex items-center font-bold text-[12px] gap-1 text-gray-700">
           <span className="text-yellow-400">★</span>
           {card.rating}
         </span>
