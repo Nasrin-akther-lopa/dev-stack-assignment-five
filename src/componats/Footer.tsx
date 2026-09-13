@@ -3,7 +3,7 @@ import logo from '../assets/logo-text.png'
 
 const Footer = () => {
     return (
-        <div className='bg-base-500 border-t'>
+        <div className='bg-base-400 border-t'>
         
             <footer className="footer container mx-auto  sm:footer-horizontal  text-base-content p-10">
   <aside>
