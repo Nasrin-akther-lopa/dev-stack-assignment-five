@@ -1,8 +1,10 @@
 import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { InCardType } from '../../Type/InCardsType';
-import { toast } from 'react-toastify';
+import { Bounce, toast } from 'react-toastify';
 
 interface CardsType {
+   isSelected : boolean ;
+    setisSelected: Dispatch<SetStateAction<boolean>>;
   card : InCardType;
   coin : number;
   setCoin : Dispatch<SetStateAction<number>>
@@ -10,9 +12,9 @@ interface CardsType {
         setselectedSideCard :Dispatch<SetStateAction<InCardType[]>>
 }
 
-const Cards = ({card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
+const Cards = ({isSelected,setisSelected,card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
 
-  const [isSelected , setisSelected] = useState(false);
+  
 
   const handelarSelectedBTN = ()=>{
     const newCoins = coin + 1 ;
@@ -20,12 +22,26 @@ const Cards = ({card , coin, setCoin ,selectedSideCard,setselectedSideCard}: Car
 
     if (newCoins > 0) {
        setCoin(newCoins)
-       toast(`${card.category} added susscesfully`)
-    }
 
-   setisSelected(true);
+       setisSelected(true);
 setselectedSideCard([...selectedSideCard,card])
 
+       
+
+       toast.success(`${card.category} added susscesfully`, {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+    }
+
+   
   }
 
     return (

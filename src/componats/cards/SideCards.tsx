@@ -1,15 +1,17 @@
 import React, { useState, type Dispatch, type SetStateAction } from 'react';
 import type { InCardType } from '../../Type/InCardsType';
-import { toast } from 'react-toastify';
+import { Bounce, toast } from 'react-toastify';
 
 interface SideCardsType {
     coin: number;
     setCoin : Dispatch<SetStateAction<number>>;
     selectedSideCard: InCardType[];
     setselectedSideCard: Dispatch<SetStateAction<InCardType[]>>
+    isSelected : boolean ;
+    setisSelected: Dispatch<SetStateAction<boolean>>
 }
 
-const SideCards = ({ coin, setCoin , selectedSideCard, setselectedSideCard }: SideCardsType) => {
+const SideCards = ({isSelected,setisSelected, coin, setCoin , selectedSideCard, setselectedSideCard }: SideCardsType) => {
 
     const handelRemoveBTN = (SideCard: InCardType) => {
         const restCard = selectedSideCard.filter(SelectedCard => SelectedCard.name != SideCard.name);
@@ -19,13 +21,39 @@ const SideCards = ({ coin, setCoin , selectedSideCard, setselectedSideCard }: Si
         const updetCoins = coin - 1;
         setCoin(updetCoins);
 
-        toast("All technologies removed successfully!");
+         setisSelected(false);
 
+
+
+        toast.success(`${SideCard.name} remove`, {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+       
     }
 
     const handelRemoveAllBtn =()=>{
        setselectedSideCard([]);
-       toast("All technologies removed successfully!");
+
+toast.success('All remove', {
+position: "bottom-right",
+autoClose: 5000,
+hideProgressBar: false,
+closeOnClick: false,
+pauseOnHover: true,
+draggable: true,
+progress: undefined,
+theme: "light",
+transition: Bounce,
+});
+
     }
 
     if (selectedSideCard.length === 0) {

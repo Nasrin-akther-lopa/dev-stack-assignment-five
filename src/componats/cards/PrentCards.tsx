@@ -13,6 +13,7 @@ const PrentCards = ({cardsPromis} : CardsProps) => {
    
     const cards = use(cardsPromis);
     const [coin , setCoin ] = useState(0);
+    const [isSelected , setisSelected] = useState(false);
     const [selectedSideCard , setselectedSideCard] = useState<InCardType[]>([])
      
     return (
@@ -23,7 +24,7 @@ const PrentCards = ({cardsPromis} : CardsProps) => {
          <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-4 gap-6">
     
     <div className="lg:col-span-3">
-        <MainCards coin={coin} 
+        <MainCards isSelected={isSelected} setisSelected={setisSelected} coin={coin} 
         setCoin={setCoin} cards={cards} 
         selectedSideCard={selectedSideCard} setselectedSideCard={setselectedSideCard}  >
 
@@ -31,7 +32,7 @@ const PrentCards = ({cardsPromis} : CardsProps) => {
     </div>
 
     <div className="lg:col-span-1">
-        <SideCards coin={coin} setCoin={setCoin} 
+        <SideCards isSelected={isSelected} setisSelected={setisSelected} coin={coin} setCoin={setCoin} 
         selectedSideCard={selectedSideCard} setselectedSideCard={setselectedSideCard} 
         ></SideCards>
     </div>
