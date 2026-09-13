@@ -1,9 +1,9 @@
-import React, { useState, type Dispatch, type SetStateAction } from 'react';
+import {  type Dispatch, type SetStateAction } from 'react';
 import type { InCardType } from '../../Type/InCardsType';
 import { Bounce, toast } from 'react-toastify';
 
 interface CardsType {
-   isSelected : boolean ;
+
     setisSelected: Dispatch<SetStateAction<boolean>>;
   card : InCardType;
   coin : number;
@@ -12,7 +12,7 @@ interface CardsType {
         setselectedSideCard :Dispatch<SetStateAction<InCardType[]>>
 }
 
-const Cards = ({isSelected,setisSelected,card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
+const Cards = ({setisSelected,card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
 
   const selectedCard = selectedSideCard.find(item => item.id === card.id);
 

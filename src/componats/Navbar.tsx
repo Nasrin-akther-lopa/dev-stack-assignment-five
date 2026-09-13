@@ -1,4 +1,4 @@
-import React from 'react';
+
 import logoImg from '../assets/logo-text.png'
 
 const Navbar = () => {
