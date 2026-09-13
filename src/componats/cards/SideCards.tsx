@@ -1,4 +1,4 @@
-import  {  type Dispatch, type SetStateAction } from 'react';
+import  { type Dispatch, type SetStateAction } from 'react';
 import type { InCardType } from '../../Type/InCardsType';
 import { Bounce, toast } from 'react-toastify';
 
@@ -7,11 +7,11 @@ interface SideCardsType {
     setCoin: Dispatch<SetStateAction<number>>;
     selectedSideCard: InCardType[];
     setselectedSideCard: Dispatch<SetStateAction<InCardType[]>>
-    isSelected: boolean;
-    setisSelected: Dispatch<SetStateAction<boolean>>
+    
+    
 }
 
-const SideCards = ({ isSelected, setisSelected, coin, setCoin, selectedSideCard, setselectedSideCard }: SideCardsType) => {
+const SideCards = ({   coin, setCoin, selectedSideCard, setselectedSideCard }: SideCardsType) => {
 
     const handelRemoveBTN = (SideCard: InCardType) => {
         const restCard = selectedSideCard.filter(SelectedCard => SelectedCard.name != SideCard.name);
@@ -21,8 +21,7 @@ const SideCards = ({ isSelected, setisSelected, coin, setCoin, selectedSideCard,
         const updetCoins = coin - 1;
         setCoin(updetCoins);
 
-        setisSelected(false);
-
+        
 
 
         toast.success(`${SideCard.name} remove`, {
@@ -42,7 +41,7 @@ const SideCards = ({ isSelected, setisSelected, coin, setCoin, selectedSideCard,
     const handelRemoveAllBtn = () => {
         setselectedSideCard([]);
 
-        setisSelected(false)
+        
 
         toast.success('All remove', {
             position: "bottom-right",

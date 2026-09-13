@@ -3,8 +3,8 @@ import type { InCardType } from '../../Type/InCardsType';
 import { Bounce, toast } from 'react-toastify';
 
 interface CardsType {
-
-    setisSelected: Dispatch<SetStateAction<boolean>>;
+    
+    
   card : InCardType;
   coin : number;
   setCoin : Dispatch<SetStateAction<number>>
@@ -12,7 +12,7 @@ interface CardsType {
         setselectedSideCard :Dispatch<SetStateAction<InCardType[]>>
 }
 
-const Cards = ({setisSelected,card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
+const Cards = ({card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
 
   const selectedCard = selectedSideCard.find(item => item.id === card.id);
 
@@ -23,7 +23,7 @@ const Cards = ({setisSelected,card , coin, setCoin ,selectedSideCard,setselected
     if (newCoins > 0) {
        setCoin(newCoins)
 
-       setisSelected(true);
+       
 setselectedSideCard([...selectedSideCard,card])
 
        

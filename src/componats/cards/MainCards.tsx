@@ -3,8 +3,8 @@ import type { InCardType } from '../../Type/InCardsType';
 import Cards from './Cards';
 
 interface MainCardsType {
-    isSelected : boolean ;
-    setisSelected: Dispatch<SetStateAction<boolean>>
+   
+   
   cards : InCardType[];
   coin : number;
   setCoin : Dispatch<SetStateAction<number>>;
@@ -12,14 +12,14 @@ interface MainCardsType {
         setselectedSideCard :Dispatch<SetStateAction<InCardType[]>>
 }
 
-const MainCards = ({ isSelected,setisSelected, cards , coin , setCoin ,selectedSideCard,setselectedSideCard}: MainCardsType) => {
+const MainCards = ({ cards , coin , setCoin ,selectedSideCard,setselectedSideCard}: MainCardsType) => {
     
     return (
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3'>
              {
                 cards.map((card : InCardType , ind : number)=>{
                     return <Cards
-                    isSelected={isSelected} setisSelected={setisSelected}
+                     
                      selectedSideCard={selectedSideCard} 
                      setselectedSideCard={setselectedSideCard} 
                      coin={coin} setCoin={setCoin} key={ind} card={card}>
