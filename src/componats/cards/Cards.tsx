@@ -98,7 +98,7 @@ transition: Bounce,
         font-medium text-white transition
          hover:bg-gray-800`} disabled={isSelected===true? true : false}
       >
-        {isSelected === true ? 'selected' : 'Add to Stack'}
+        {isSelected === true ? 'Added to Stack' : 'Add to Stack'}
       </button>
 
     </div>
