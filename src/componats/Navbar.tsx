@@ -3,7 +3,8 @@ import logoImg from '../assets/logo-text.png'
 
 const Navbar = () => {
     return (
-        <div className='sticky top-0 z-50 bg-white'>
+       <div className='bg-white'>
+         <div className='sticky container mx-auto top-0 z-50 '>
             <div className="navbar bg-base-100 shadow-sm">
   <div className="navbar-start">
     <div className="dropdown">
@@ -39,6 +40,7 @@ const Navbar = () => {
   </div>
 </div>
         </div>
+       </div>
     );
 };
 

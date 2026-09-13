@@ -3,9 +3,9 @@ import logo from '../assets/logo-text.png'
 
 const Footer = () => {
     return (
-        <div>
+        <div className='bg-base-500 border-t'>
         
-            <footer className="footer  sm:footer-horizontal bg-base-200 text-base-content p-10">
+            <footer className="footer container mx-auto  sm:footer-horizontal  text-base-content p-10">
   <aside>
     <img src={logo} alt="" />
     <p className='font-semibold text-gray-500 '>
