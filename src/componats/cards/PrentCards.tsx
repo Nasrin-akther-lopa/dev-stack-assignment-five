@@ -15,6 +15,8 @@ const PrentCards = ({cardsPromis} : CardsProps) => {
     const [coin , setCoin ] = useState(0);
     const [isSelected , setisSelected] = useState(false);
     const [selectedSideCard , setselectedSideCard] = useState<InCardType[]>([])
+
+   
      
     return (
         <div className=' container mx-auto py-10'>

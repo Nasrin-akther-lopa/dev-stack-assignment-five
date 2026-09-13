@@ -94,7 +94,7 @@ The website is fully responsive and works properly on:
 | 🌸 DaisyUI        | UI components                 |
 | 🔔 React-Toastify | Toast notifications           |
 | 📄 JSON           | Storing technology data       |
-| ⚡ Vite            | Development and build tool    |
+|  Vite            | Development and build tool    |
 
 ---
 
@@ -119,7 +119,7 @@ This approach makes the application easier to maintain and allows new technologi
 
 ---
 
-## 🎨 UI & Design
+## UI & Design
 
 The project follows a modern developer-focused design with:
 

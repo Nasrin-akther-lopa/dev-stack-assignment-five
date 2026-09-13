@@ -14,7 +14,7 @@ interface CardsType {
 
 const Cards = ({isSelected,setisSelected,card , coin, setCoin ,selectedSideCard,setselectedSideCard}: CardsType) => {
 
-  
+  const selectedCard = selectedSideCard.find(item => item.id === card.id);
 
   const handelarSelectedBTN = ()=>{
     const newCoins = coin + 1 ;
@@ -93,14 +93,19 @@ transition: Bounce,
       </div>
 
       {/* Button */}
-      <button onClick={handelarSelectedBTN}
-        className={`mt-3 w-full rounded-md bg-gray-950 py-2 text-[8px] 
-        font-medium text-white transition
-         hover:bg-gray-800`} disabled={isSelected===true? true : false}
-      >
-        {isSelected === true ? 'Added to Stack' : 'Add to Stack'}
-      </button>
-
+     <button
+  onClick={handelarSelectedBTN}
+  disabled={selectedCard !== undefined}
+  className={`mt-3 w-full rounded-md py-2 text-[10px] font-medium text-white transition
+    ${
+      selectedCard
+        ? "bg-pink-400 hover:bg-pink-400"
+        : "bg-gray-950 hover:bg-gray-800"
+    }
+  `}
+>
+  {selectedCard ? "✔️ Added to Stack" : "Add to Stack"}
+</button>
     </div>
     );
 };
